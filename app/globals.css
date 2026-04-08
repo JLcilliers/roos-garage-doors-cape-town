@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bone: #F5F1EA;
+  --color-graphite: #111315;
+  --color-steel: #3A3F44;
+  --color-aluminium: #B8BCC0;
+  --color-meranti: #B4591F;
+  --color-ember: #E2691C;
+  --color-sage: #6A7A5C;
+  --font-display: "Big Shoulders Display", ui-sans-serif, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bone);
+  color: var(--color-graphite);
+  font-family: var(--font-body);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-meranti);
+}
+
+.rule {
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background: var(--color-meranti);
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.6rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--color-graphite);
+  color: var(--color-bone);
+  border-bottom: 2px solid var(--color-meranti);
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+.btn:hover { transform: translateY(-2px); border-bottom-color: var(--color-ember); }
+.btn-ghost {
+  background: transparent;
+  color: var(--color-graphite);
+  border: 1px solid var(--color-graphite);
+  border-bottom-width: 1px;
+}
+.btn-ghost:hover { background: var(--color-graphite); color: var(--color-bone); }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-meranti);
+  outline-offset: 3px;
+}
+
+.card {
+  background: var(--color-bone);
+  border: 1px solid var(--color-aluminium);
+  transition: border-color .2s ease, transform .2s ease;
+}
+.card:hover { border-color: var(--color-graphite); transform: translateY(-2px); }
+
+.grain {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(180,89,31,0.06), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(58,63,68,0.08), transparent 50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
