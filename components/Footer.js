@@ -3,7 +3,7 @@ import { BUSINESS, SERVICES } from "@/lib/business";
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-graphite)] text-[var(--color-bone)] mt-24">
+    <footer className="bg-[var(--color-graphite)] text-[var(--color-bone)]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="display text-5xl mb-4 leading-none">ROOS<br/><span className="text-[var(--color-meranti)]">GARAGE DOORS</span></div>
