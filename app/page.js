@@ -68,6 +68,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MATERIALS */}
+      <section className="border-y border-[var(--color-aluminium)] bg-[var(--color-bone)]">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 py-24">
+          <div className="grid md:grid-cols-12 gap-10 mb-16 items-end">
+            <div className="md:col-span-7">
+              <div className="rule" />
+              <h2 className="display text-5xl md:text-7xl">Three materials.<br/>One workshop.</h2>
+            </div>
+            <p className="md:col-span-5 text-[var(--color-steel)] text-lg">We only build in what we know. Each material earns its place for a reason — climate, character, or cost — and we&rsquo;ll tell you which one fits your driveway before we quote.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { tag: "M/01", name: "Meranti", sub: "Timber", lead: "Hand-milled hardwood, oil-finished.", bullets: ["Warm, architectural character", "Handles heritage matches and arches", "Refinishable for life"], swatch: "linear-gradient(135deg, #B4591F 0%, #7a3a12 100%)" },
+              { tag: "M/02", name: "Aluminium", sub: "Sectional", lead: "Lightweight, coastal-proof, low upkeep.", bullets: ["Marine-grade powder coating", "Runs silent on Eazylift operators", "Best for coastal Cape Town"], swatch: "linear-gradient(135deg, #B8BCC0 0%, #6a7079 100%)" },
+              { tag: "M/03", name: "Aluzinc", sub: "Steel", lead: "Industrial strength, structural edge.", bullets: ["Zinc-aluminium alloy skin", "Ideal for double & commercial spans", "Galvanised, stucco, or smooth"], swatch: "linear-gradient(135deg, #3A3F44 0%, #111315 100%)" },
+            ].map(m => (
+              <article key={m.tag} className="card p-8 flex flex-col min-h-[360px]">
+                <div className="flex items-start justify-between mb-6">
+                  <span className="eyebrow">{m.tag}</span>
+                  <div className="w-14 h-14" style={{background: m.swatch}} aria-hidden />
+                </div>
+                <h3 className="display text-4xl leading-[0.9]">{m.name}</h3>
+                <div className="display text-xl text-[var(--color-aluminium)] mb-4">{m.sub}</div>
+                <p className="text-sm text-[var(--color-steel)] mb-6">{m.lead}</p>
+                <ul className="mt-auto space-y-2 pt-6 border-t border-[var(--color-aluminium)]">
+                  {m.bullets.map(b => (
+                    <li key={b} className="text-xs uppercase tracking-[0.12em] text-[var(--color-graphite)] font-medium flex gap-2">
+                      <span className="text-[var(--color-meranti)]">—</span>{b}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHY US */}
       <section className="bg-[var(--color-graphite)] text-[var(--color-bone)]">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 py-24">
